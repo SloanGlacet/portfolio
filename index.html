@@ -428,8 +428,8 @@
         <!-- Projects Section -->
         <section id="projets">
             <h2>Mes Projets</h2>
-            <div class="projects-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 2rem auto 0;">
-                <!-- Project 1 - Top centered -->
+            <div class="projects-grid">
+                <!-- Project 1 - SEO -->
                 <div class="project-card">
                     <div class="project-image" style="font-size: 2.5rem; font-weight: bold;">SEO</div>
                     <div class="project-content">
@@ -443,10 +443,8 @@
                         <a href="#" class="project-link" onclick="openModal('project0'); return false;">Voir le projet</a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 2rem;">
-                <!-- Project 2 - Bottom left -->
+
+                <!-- Project 2 - Site Vitrine -->
                 <div class="project-card">
                     <div class="project-image" style="font-size: 2.5rem; font-weight: bold;">WEB</div>
                     <div class="project-content">
@@ -461,7 +459,22 @@
                     </div>
                 </div>
 
-                <!-- Project 3 - Bottom right -->
+                <!-- Project 3 - Landing Page -->
+                <div class="project-card">
+                    <div class="project-image" style="font-size: 2.5rem; font-weight: bold;">PAGE</div>
+                    <div class="project-content">
+                        <h3>Landing Page</h3>
+                        <p>Page d'atterrissage optimisée pour la conversion avec design moderne, formulaire de contact et appel à l'action percutant.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Conversion</span>
+                        </div>
+                        <a href="#" class="project-link" onclick="openModal('project2'); return false;">Voir le projet</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 - Système Réservation -->
                 <div class="project-card">
                     <div class="project-image" style="font-size: 2.5rem; font-weight: bold;">SYSTEM</div>
                     <div class="project-content">
@@ -472,7 +485,7 @@
                             <span class="tag">HTML5</span>
                             <span class="tag">Automatisation</span>
                         </div>
-                        <a href="#" class="project-link" onclick="openModal('project2'); return false;">Voir le projet</a>
+                        <a href="#" class="project-link" onclick="openModal('project3'); return false;">Voir le projet</a>
                     </div>
                 </div>
             </div>
@@ -573,6 +586,36 @@
     <div id="project2" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('project2')">&times;</button>
+            <h3>Landing Page</h3>
+            <p>Page d'atterrissage professionnelle conçue pour maximiser les conversions et transformer les visiteurs en clients.</p>
+            
+            <div class="project-details">
+                <div class="detail-item">
+                    <strong>🎯 Objectifs du projet :</strong>
+                    Créer une page unique optimisée pour convertir les visiteurs en leads qualifiés grâce à un design attractif et un message percutant.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>🛠️ Technologies utilisées :</strong>
+                    HTML5, JavaScript, CSS3, animations modernes et optimisation des performances.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>📈 Résultats :</strong>
+                    Design moderne et épuré, temps de chargement ultra-rapide, taux de conversion optimisé, parfaitement responsive.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>✨ Fonctionnalités :</strong>
+                    Formulaire de contact optimisé, bouton d'appel à l'action, animations au scroll, intégration réseaux sociaux.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project3" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('project3')">&times;</button>
             <h3>Système de Réservation Automatique</h3>
             <p>Plateforme de réservation en ligne permettant aux clients de prendre rendez-vous 24h/24 sans intervention humaine.</p>
             
