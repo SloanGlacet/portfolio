@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Développeur web spécialisé en JavaScript, HTML et SEO. Création de sites performants et optimisés pour les moteurs de recherche.">
+    <meta name="keywords" content="développeur web, JavaScript, HTML, SEO, référencement naturel, création site web">
+    <meta name="author" content="Votre Nom">
+    <meta property="og:title" content="Portfolio - Développeur Web JavaScript & SEO">
+    <meta property="og:description" content="Création de sites web performants avec optimisation SEO">
+    <meta property="og:type" content="website">
+    <title>Portfolio - Développeur Web JavaScript & SEO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            sticky: top;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section */
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: #e0e7ff;
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .project-link:hover {
+            opacity: 0.9;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: auto;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: #764ba2;
+        }
+
+        .modal-content h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .modal-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .modal-content .project-details {
+            margin-top: 1.5rem;
+        }
+
+        .modal-content .detail-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .modal-content .detail-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { 
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Votre Nom</h1>
+        <p>Développeur JavaScript & Expert SEO</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#apropos">À Propos</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="apropos">
+            <h2>À Propos de Moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Développeur web spécialisé en JavaScript et HTML, je crée des sites performants et optimisés pour les moteurs de recherche. Mon expertise en SEO me permet de concevoir des sites qui génèrent du trafic et de la visibilité.</p>
+                    <p style="margin-top: 1rem;">Je combine développement technique et optimisation SEO pour offrir des solutions complètes : sites rapides, code propre et bien référencés sur Google. Chaque projet est une opportunité de maximiser votre présence en ligne.</p>
+                    
+                    <div class="skills">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">SEO</span>
+                        <span class="skill-tag">Optimisation Web</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projets">
+            <h2>Mes Projets</h2>
+            <div class="projects-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 2rem auto 0;">
+                <!-- Project 1 - Top centered -->
+                <div class="project-card">
+                    <div class="project-image">🚀</div>
+                    <div class="project-content">
+                        <h3>Site Optimisé SEO</h3>
+                        <p>Site web entièrement optimisé pour le référencement avec balises meta, structure HTML sémantique et performances maximales.</p>
+                        <div class="project-tags">
+                            <span class="tag">SEO</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">Performance</span>
+                        </div>
+                        <a href="#" class="project-link" onclick="openModal('project0'); return false;">Voir le projet</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 2rem;">
+                <!-- Project 2 - Bottom left -->
+                <div class="project-card">
+                    <div class="project-image">💼</div>
+                    <div class="project-content">
+                        <h3>Site Vitrine Entreprise</h3>
+                        <p>Site professionnel avec référencement naturel optimisé, temps de chargement rapide et structure SEO-friendly.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">SEO</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <a href="#" class="project-link" onclick="openModal('project1'); return false;">Voir le projet</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Bottom right -->
+                <div class="project-card">
+                    <div class="project-image">📅</div>
+                    <div class="project-content">
+                        <h3>Système de Réservation Automatique</h3>
+                        <p>Plateforme de réservation en ligne avec gestion automatique des créneaux, confirmation par email et interface admin.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">Automatisation</span>
+                        </div>
+                        <a href="#" class="project-link" onclick="openModal('project2'); return false;">Voir le projet</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Me Contacter</h2>
+            <div class="contact-form">
+                <p style="text-align: center; margin-bottom: 2rem;">Vous avez un projet ? Discutons-en ! Je suis disponible pour de nouvelles collaborations.</p>
+                <div id="form-status" style="display: none; padding: 1rem; border-radius: 5px; margin-bottom: 1rem; text-align: center;"></div>
+                <form id="contact-form" action="https://formspree.io/f/manaepvo" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="_replyto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                    <button type="submit" id="submit-btn">Envoyer le message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modals for Projects -->
+    <div id="project0" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('project0')">&times;</button>
+            <h3>Site Optimisé SEO</h3>
+            <p>Site web conçu et optimisé pour obtenir un excellent référencement naturel sur Google et attirer un trafic qualifié.</p>
+            
+            <div class="project-details">
+                <div class="detail-item">
+                    <strong>🎯 Objectifs du projet :</strong>
+                    Créer un site web qui apparaît en première page de Google pour attirer des clients gratuitement via le référencement naturel.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>🛠️ Technologies utilisées :</strong>
+                    HTML5 sémantique, balises meta optimisées, structure SEO-friendly, données structurées, optimisation des performances.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>📈 Résultats :</strong>
+                    Score SEO excellent, temps de chargement ultra-rapide, indexation parfaite sur Google, amélioration du positionnement sur les mots-clés ciblés.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>✨ Fonctionnalités :</strong>
+                    Sitemap XML, fichier robots.txt, URL optimisées, balises Open Graph, adaptation mobile parfaite, compression d'images.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project1" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('project1')">&times;</button>
+            <h3>Site Vitrine Entreprise</h3>
+            <p>Site web professionnel créé pour une entreprise souhaitant améliorer sa visibilité en ligne et attirer de nouveaux clients grâce au référencement naturel.</p>
+            
+            <div class="project-details">
+                <div class="detail-item">
+                    <strong>🎯 Objectifs du projet :</strong>
+                    Présenter les produits ou services de manière attractive pour convertir les visiteurs en clients, avoir une image professionnelle sur internet et rendre l'accès à vos services beaucoup plus facilement.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>🛠️ Technologies utilisées :</strong>
+                    HTML5 sémantique, CSS3, JavaScript vanilla, design responsive et animations modernes.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>📈 Résultats :</strong>
+                    Site 100% responsive, temps de chargement < 2 secondes.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>✨ Fonctionnalités :</strong>
+                    Formulaire de contact, galerie de services, section témoignages, bouton d'appel.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project2" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('project2')">&times;</button>
+            <h3>Système de Réservation Automatique</h3>
+            <p>Plateforme de réservation en ligne permettant aux clients de prendre rendez-vous 24h/24 sans intervention humaine.</p>
+            
+            <div class="project-details">
+                <div class="detail-item">
+                    <strong>🎯 Objectifs du projet :</strong>
+                    Automatiser la prise de rendez-vous et réduire la charge administrative pour le client.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>🛠️ Technologies utilisées :</strong>
+                    JavaScript avancé, HTML5, gestion de calendrier dynamique, système de notifications par email.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>📈 Résultats :</strong>
+                    Gain de temps de 80% sur la gestion des rendez-vous, réduction des no-shows grâce aux rappels automatiques.
+                </div>
+                
+                <div class="detail-item">
+                    <strong>✨ Fonctionnalités :</strong>
+                    Calendrier interactif, gestion des disponibilités, confirmation automatique par email, interface d'administration, export des données.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Votre Nom - Développeur Web</p>
+        <div class="social-links">
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        // Close modal when clicking outside of it
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal(this.id);
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
+
+        // Contact form handling with AJAX
+        const form = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+            
+            // Get form data
+            const formData = new FormData(form);
+            
+            // Send to Formspree
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success
+                    formStatus.style.display = 'block';
+                    formStatus.style.backgroundColor = '#d4edda';
+                    formStatus.style.color = '#155724';
+                    formStatus.textContent = '✓ Message envoyé avec succès ! Je vous répondrai rapidement.';
+                    form.reset();
+                } else {
+                    // Error
+                    formStatus.style.display = 'block';
+                    formStatus.style.backgroundColor = '#f8d7da';
+                    formStatus.style.color = '#721c24';
+                    formStatus.textContent = '✗ Erreur lors de l\'envoi. Veuillez réessayer.';
+                }
+            })
+            .catch(error => {
+                // Network error
+                formStatus.style.display = 'block';
+                formStatus.style.backgroundColor = '#f8d7da';
+                formStatus.style.color = '#721c24';
+                formStatus.textContent = '✗ Erreur de connexion. Veuillez réessayer.';
+            })
+            .finally(() => {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Envoyer le message';
+            });
+        });
+    </script>
+</body>
+</html>
